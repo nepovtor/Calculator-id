@@ -48,8 +48,9 @@ function calculateNetworkAddress(ip, mask) {
 
 function calculateBroadcastAddress(networkAddress, mask) {
     const networkBinary = ipToBinary(networkAddress);
-    const maskBinary = ipToBinary(mask).replace(/1/g, '0').replace(/0/g, '1');
-    const broadcastBinary = [...networkBinary].map((bit, i) => bit | maskBinary[i]).join('');
+    const maskBinary = ipToBinary(mask);
+    const invertedMaskBinary = maskBinary.split('').map(bit => bit === '1' ? '0' : '1').join('');
+    const broadcastBinary = [...networkBinary].map((bit, i) => bit | invertedMaskBinary[i]).join('');
     return binaryToIp(broadcastBinary);
 }
 
