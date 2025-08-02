@@ -94,6 +94,13 @@
             overflow-y: auto;
             margin-top: 20px;
         }
+        .navigation {
+            display: flex;
+            gap: 10px;
+        }
+        .navigation button {
+            width: 50%;
+        }
         /* Smooth scroll for UX */
         html {
             scroll-behavior: smooth;
@@ -115,6 +122,10 @@
         </div>
 
         <div id="solution" class="scrollable"></div>
+        <div id="navigation" class="navigation" style="display: none;">
+            <button id="prevBtn" onclick="prevStep()">Previous</button>
+            <button id="nextBtn" onclick="nextStep()">Next</button>
+        </div>
     </div>
 
     <script src="script.js"></script>

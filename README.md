@@ -1,6 +1,6 @@
 # IP Subnet Calculator
 
-This is a simple web-based subnet calculator. Enter an IP address in CIDR notation and the tool will display the subnet mask, network and broadcast addresses, and the available host range. Detailed steps for each calculation are also shown.
+This is a simple web-based subnet calculator. Enter an IP address in CIDR notation and the tool will display the subnet mask, network and broadcast addresses, and the available host range. Detailed steps for each calculation are presented one at a time with **Next** and **Previous** buttons for easy navigation.
 
 The interface uses a modern design with a dark gradient background and cyan highlights.
 
