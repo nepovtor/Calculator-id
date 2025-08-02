@@ -1,3 +1,6 @@
+let steps = [];
+let currentStep = 0;
+
 function calculateSubnet() {
     const input = document.getElementById('ip').value;
     const [ip, cidr] = input.split('/');
@@ -19,8 +22,30 @@ function calculateSubnet() {
     document.getElementById('hostRange').innerText = hostRange;
 
     // Генерация подробного решения
-    const solution = generateSolution(ip, cidr, subnetMask, networkAddress, broadcastAddress, hostRange);
-    document.getElementById('solution').innerHTML = solution;
+    steps = generateSolutionSteps(ip, cidr, subnetMask, networkAddress, broadcastAddress, hostRange);
+    currentStep = 0;
+    showStep(currentStep);
+    document.getElementById('navigation').style.display = 'flex';
+}
+
+function showStep(index) {
+    document.getElementById('solution').innerHTML = steps[index];
+    document.getElementById('prevBtn').disabled = index === 0;
+    document.getElementById('nextBtn').disabled = index === steps.length - 1;
+}
+
+function nextStep() {
+    if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+    }
+}
+
+function prevStep() {
+    if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+    }
 }
 
 function cidrToMask(cidr) {
@@ -64,24 +89,24 @@ function calculateHostRange(networkAddress, broadcastAddress) {
     return `${binaryToIp(firstHostBinary)} - ${binaryToIp(lastHostBinary)}`;
 }
 
-function generateSolution(ip, cidr, subnetMask, networkAddress, broadcastAddress, hostRange) {
+function generateSolutionSteps(ip, cidr, subnetMask, networkAddress, broadcastAddress, hostRange) {
     const ipBinary = ipToBinary(ip);
     const maskBinary = ipToBinary(subnetMask);
     const networkBinary = ipToBinary(networkAddress);
     const broadcastBinary = ipToBinary(broadcastAddress);
 
-    return `
-        <div class="solution-step">
+    return [
+        `<div class="solution-step">
             <h3>1. Введенный IP-адрес</h3>
             <p>IP-адрес: <span class="highlight">${ip}</span> (в двоичной системе: ${ipBinary})</p>
-        </div>
+        </div>`,
 
-        <div class="solution-step">
+        `<div class="solution-step">
             <h3>2. Маска подсети</h3>
             <p>Маска подсети: <span class="highlight">/${cidr}</span> (${subnetMask} в десятичной системе, ${maskBinary} в двоичной системе)</p>
-        </div>
+        </div>`,
 
-        <div class="solution-step">
+        `<div class="solution-step">
             <h3>3. Адрес сети</h3>
             <ul>
                 <li>IP-адрес (в двоичной системе): ${ipBinary}</li>
@@ -89,9 +114,9 @@ function generateSolution(ip, cidr, subnetMask, networkAddress, broadcastAddress
                 <li>Побитовое "И": ${networkBinary}</li>
                 <li>Адрес сети: <span class="highlight">${networkAddress}</span></li>
             </ul>
-        </div>
+        </div>`,
 
-        <div class="solution-step">
+        `<div class="solution-step">
             <h3>4. Широковещательный адрес</h3>
             <ul>
                 <li>Адрес сети (в двоичной системе): ${networkBinary}</li>
@@ -99,11 +124,11 @@ function generateSolution(ip, cidr, subnetMask, networkAddress, broadcastAddress
                 <li>Побитовое "ИЛИ": ${broadcastBinary}</li>
                 <li>Широковещательный адрес: <span class="highlight">${broadcastAddress}</span></li>
             </ul>
-        </div>
+        </div>`,
 
-        <div class="solution-step">
+        `<div class="solution-step">
             <h3>5. Диапазон доступных IP-адресов</h3>
             <p>Доступный диапазон IP-адресов для хостов: <span class="highlight">${hostRange}</span></p>
-        </div>
-    `;
+        </div>`
+    ];
 }
