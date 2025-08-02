@@ -1,4 +1,5 @@
 let answers = {};
+let isBlocked = false;
 
 const positiveMessages = [
     "Ты молодец!",
@@ -106,6 +107,28 @@ const negativeMessages = [
     "Будь честным с собой."
 ];
 
+function blockUser() {
+    if (isBlocked) return;
+    isBlocked = true;
+    for (let i = 1; i <= 5; i++) {
+        const input = document.getElementById(`step${i}`);
+        input.disabled = true;
+        input.style.borderColor = 'red';
+    }
+    const messageElement = document.getElementById('congrats');
+    const randomMessage = negativeMessages[Math.floor(Math.random() * negativeMessages.length)];
+    messageElement.innerText = randomMessage;
+    messageElement.style.display = 'block';
+}
+
+window.addEventListener('blur', blockUser);
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+        blockUser();
+    }
+});
+document.addEventListener('paste', blockUser);
+
 function getRandomOctet() {
     return Math.floor(Math.random() * 256);
 }
@@ -140,6 +163,14 @@ function generateChallenge() {
 }
 
 function checkAnswers() {
+    if (isBlocked) {
+        const messageElement = document.getElementById('congrats');
+        const randomMessage = negativeMessages[Math.floor(Math.random() * negativeMessages.length)];
+        messageElement.innerText = randomMessage;
+        messageElement.style.display = 'block';
+        return;
+    }
+
     let allCorrect = true;
     for (let i = 1; i <= 5; i++) {
         const input = document.getElementById(`step${i}`);
@@ -148,7 +179,6 @@ function checkAnswers() {
             input.style.borderColor = 'green';
         } else {
             input.style.borderColor = 'red';
-            input.value = answers[`step${i}`];
             allCorrect = false;
         }
     }
