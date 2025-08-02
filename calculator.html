@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Subnet Calculator - Cool Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            background-color: rgba(51, 51, 51, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        h1 {
+            text-align: center;
+            color: #00BCD4;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input {
+            padding: 12px;
+            margin-bottom: 20px;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #00BCD4;
+            background-color: #2c2c2c;
+            color: white;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        button {
+            background-color: #00BCD4;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 30px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0097a7;
+        }
+        .output p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .solution-step {
+            background-color: #292929;
+            border-left: 6px solid #00BCD4;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .solution-step h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #00BCD4;
+        }
+        .solution-step ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .solution-step ul li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            color: #00BCD4;
+            font-weight: bold;
+        }
+        .scrollable {
+            max-height: 250px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        .navigation {
+            display: flex;
+            gap: 10px;
+        }
+        .navigation button {
+            width: 50%;
+        }
+        /* Smooth scroll for UX */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IP Subnet Calculator</h1>
+        <label for="ip">Enter IP Address (e.g., 192.168.50.36/21):</label>
+        <input type="text" id="ip" placeholder="192.168.50.36/21">
+        <button onclick="calculateSubnet()">Calculate</button>
+
+        <div class="output">
+            <p><strong>Subnet Mask:</strong> <span id="subnetMask" class="highlight"></span></p>
+            <p><strong>Network Address:</strong> <span id="networkAddress" class="highlight"></span></p>
+            <p><strong>Broadcast Address:</strong> <span id="broadcastAddress" class="highlight"></span></p>
+            <p><strong>Available Host Range:</strong> <span id="hostRange" class="highlight"></span></p>
+        </div>
+
+        <div id="solution" class="scrollable"></div>
+        <div id="navigation" class="navigation" style="display: none;">
+            <button id="prevBtn" onclick="prevStep()">Previous</button>
+            <button id="nextBtn" onclick="nextStep()">Next</button>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
