@@ -66,6 +66,13 @@
             color: #00BCD4;
             font-weight: bold;
         }
+        #congrats {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 20px;
+            display: none;
+            color: #00BCD4;
+        }
     </style>
 </head>
 <body>
@@ -84,6 +91,7 @@
         <input type="text" id="step5" placeholder="192.168.0.1 - 192.168.0.254">
         <button onclick="checkAnswers()">Check Answers</button>
         <button onclick="generateChallenge()">New IP</button>
+        <div id="congrats" class="highlight"></div>
     </div>
     <script src="training.js"></script>
 </body>

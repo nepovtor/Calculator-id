@@ -28,9 +28,13 @@ function generateChallenge() {
         input.value = '';
         input.style.borderColor = '#00BCD4';
     }
+    const message = document.getElementById('congrats');
+    message.style.display = 'none';
+    message.innerText = '';
 }
 
 function checkAnswers() {
+    let allCorrect = true;
     for (let i = 1; i <= 5; i++) {
         const input = document.getElementById(`step${i}`);
         const value = input.value.trim();
@@ -38,7 +42,66 @@ function checkAnswers() {
             input.style.borderColor = 'green';
         } else {
             input.style.borderColor = 'red';
+            allCorrect = false;
         }
+    }
+    if (allCorrect) {
+        const messages = [
+            "Ты молодец!",
+            "Ты крутой!",
+            "У тебя все получится!",
+            "Так держать!",
+            "Отличная работа!",
+            "Ты просто гений!",
+            "Невероятно!",
+            "Ты на правильном пути!",
+            "Ты сделал это!",
+            "Браво!",
+            "Фантастический результат!",
+            "Ты настоящий профи!",
+            "Уже мастерство!",
+            "У тебя золотой мозг!",
+            "Превосходно!",
+            "Умничка!",
+            "Потрясающе!",
+            "Ты лучший!",
+            "Великолепно!",
+            "Супер!",
+            "Так и продолжай!",
+            "Ты достиг цели!",
+            "Твой прогресс впечатляет!",
+            "Ты на высоте!",
+            "Заслуженный успех!",
+            "Это было блестяще!",
+            "Талантливо!",
+            "Достойно аплодисментов!",
+            "Твоя настойчивость окупилась!",
+            "Ты растешь с каждым шагом!",
+            "С каждым разом всё лучше!",
+            "Победа за тобой!",
+            "Горжусь тобой!",
+            "Смело и точно!",
+            "Великолепная работа!",
+            "Талант видно сразу!",
+            "Нельзя не восхититься!",
+            "У тебя железная логика!",
+            "Потрясающее мышление!",
+            "Ты почти хакер!",
+            "Ты пример для остальных!",
+            "Вдохновляешь!",
+            "Этот успех заслужен!",
+            "Ты отлично постарался!",
+            "Отличный подход!",
+            "Ты превосходишь ожидания!",
+            "Такого результата не каждый добьется!",
+            "Твой мозг сверкает!",
+            "Блестяще выполнено!",
+            "Ты полностью справился!"
+        ];
+        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        const messageElement = document.getElementById('congrats');
+        messageElement.innerText = randomMessage;
+        messageElement.style.display = 'block';
     }
 }
 
