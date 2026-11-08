@@ -15,7 +15,156 @@
 @media(max-width:620px){body{font-size:14px}.site-header{height:67px;padding:0 16px;gap:10px}.brand-symbol{width:32px;height:32px;border-radius:9px;font-size:20px}.brand-text{font-size:20px}.region-pill{display:none}.header-actions .button{font-size:11px;min-height:37px;padding:9px 11px}.hero{padding:42px 20px 66px}.hero h1{font-size:clamp(43px,10vw,57px)}.hero-copy p{font-size:13px}.value-rail{padding:0 14px}.demo-banner{margin:5px 15px 0;display:block;padding:14px}.demo-badge{float:left;margin:2px 12px 7px 0}.text-button{display:block;margin:9px 0 0 0;padding:5px 0}.section{padding:53px 15px 0}.section-heading{display:block}.section-aside{display:none}.category-grid{grid-template-columns:repeat(2,1fr);gap:9px}.category-card{min-height:143px;padding:17px 14px}.category-icon{width:42px;height:42px;font-size:22px;margin-bottom:10px}.category-name{font-size:13px}.category-count{font-size:10px}.workspace-section{padding-top:55px}.workspace-section .section-heading .button{margin-top:16px}.product-panel{padding:12px 9px}.analysis-panel{padding:15px}.analysis-topline h3{font-size:23px}.kpi-grid{grid-template-columns:1fr;gap:8px}.kpi{padding:15px 17px}.kpi strong{font-size:26px;padding:6px 0 4px}.kpi small{min-height:0}.calc-wrap{padding:16px 12px}.calc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.input-field>span{font-size:10px}.calc-head{display:block}.live-indicator{display:none}.bottom-grid,.quotes-grid{grid-template-columns:1fr}.cash-card,.breakdown-card{padding:18px}.offers-head{display:block}.offer-actions{margin-bottom:16px}.source-card{display:block}.source-links{margin-top:13px;justify-content:flex-start}.methodology{margin-top:45px;padding-bottom:48px}.method-grid{grid-template-columns:1fr;gap:9px}.method-grid article{padding:18px}.tools-section{padding-bottom:48px}.tools-actions .button{flex:1 1 45%;white-space:normal}.footer{padding:26px 18px;display:block}.footer p{margin:9px 0}.footer a{display:block;margin-top:10px}.modal{padding:20px}.modal-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.modal-actions .button{white-space:normal}.quotes-card{padding:16px}.quality-line{flex-wrap:wrap}}
 @media(max-width:360px){.calc-grid,.modal-grid{grid-template-columns:1fr}.modal-grid .span2{grid-column:auto}.category-grid{grid-template-columns:1fr 1fr}.hero h1{font-size:41px}}
 
-</style>
+
+/* Mobile-first enhancements: contain intrinsic widths, prioritize the margin calculator,
+   and maintain thumb-friendly controls across small screens. */
+.workspace,.product-panel,.analysis-panel,.analysis-topline,.analysis-topline>div:first-child,
+.calc-wrap,.calc-grid,.quotes-grid,.bottom-grid,.quotes-card,.breakdown-card,.cash-card{min-width:0;max-width:100%}
+.product-panel{overflow:hidden}
+.product-list{min-width:0;max-width:100%}
+.product-item{min-width:0}
+.quote-head{min-width:0}
+.quote-head strong{overflow-wrap:anywhere;text-align:right}
+.quote-head b,.analysis-topline h3,.breakdown-row span{overflow-wrap:anywhere}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+input,select,button{touch-action:manipulation}
+button,a{ -webkit-tap-highlight-color:transparent }
+:where(button,a,input,select):focus-visible{outline:3px solid #68a564;outline-offset:3px}
+.qty-shortcuts{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:10px 0 16px}
+.qty-shortcuts>span{font-size:11px;color:#6c7c73;font-weight:700;margin-right:3px}
+.qty-shortcuts button{font:inherit;font-size:12px;font-weight:750;border-radius:10px;border:1px solid #d7e0d8;background:#fff;color:#405348;padding:9px 13px;min-height:39px;min-width:46px;cursor:pointer}
+.qty-shortcuts button.active,.qty-shortcuts button[aria-pressed=true]{border-color:#253d30;background:#243d30;color:#fff}
+.mobile-dock{display:none}
+@media(max-width:900px){
+  .workspace{grid-template-columns:minmax(0,1fr)}
+  .product-panel,.analysis-panel{min-width:0;width:100%}
+  .product-list{display:flex;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scrollbar-width:thin}
+  .product-item{flex:0 0 190px;width:190px;min-width:190px;max-width:190px;scroll-snap-align:start}
+  .analysis-panel{scroll-margin-top:85px}
+}
+@media(max-width:620px){
+  body{padding-bottom:calc(78px + env(safe-area-inset-bottom));overflow-x:hidden}
+  .app-shell{width:100%;max-width:100%;overflow:clip}
+  .site-header{position:sticky;top:0;z-index:20;height:62px;min-height:62px;padding-inline:16px;box-shadow:0 7px 25px #0b192322}
+  .header-actions .button{min-height:44px;padding:9px 13px;font-size:12px}
+  .hero{padding:35px 20px 37px}
+  .hero h1{font-size:clamp(37px,10.6vw,50px);line-height:1.02;margin:15px 0 16px;letter-spacing:-.055em}
+  .hero-copy p{font-size:14px;line-height:1.6;margin-bottom:22px}
+  .hero .button{min-height:47px}
+  .value-rail{display:none}
+  .demo-banner{margin:14px 15px 0;padding:15px 16px;border-radius:15px}
+  .demo-banner p{font-size:12px;line-height:1.55}
+  .section{padding:38px 15px 0}
+  .section-heading{margin-bottom:16px}
+  .section-heading h2{font-size:clamp(25px,7.3vw,32px);line-height:1.15}
+  .section-heading p{font-size:13px;line-height:1.6;margin-top:8px}
+  .category-grid{display:flex;overflow-x:auto;overflow-y:hidden;max-width:100%;gap:10px;padding:3px 2px 12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none}
+  .category-grid::-webkit-scrollbar,.product-list::-webkit-scrollbar{display:none}
+  .category-card{flex:0 0 clamp(145px,42vw,176px);min-width:0;min-height:146px;scroll-snap-align:start;padding:16px 13px;border-radius:16px}
+  .category-card:active{transform:scale(.985)}
+  .category-icon{width:41px;height:41px;font-size:20px}
+  .category-name{font-size:13px;line-height:1.25}
+  .category-count{font-size:10px;line-height:1.4}
+  .workspace-section{padding-top:30px}
+  .workspace-section .section-heading .button{width:100%;margin:15px 0 0;min-height:44px}
+  .workspace{gap:12px}
+  .product-panel{padding:13px 11px 11px;border-radius:15px}
+  .panel-top{padding:4px 5px 12px}
+  .searchbox{height:46px;margin:0 0 10px}
+  .searchbox input{font-size:16px}
+  .product-list{gap:8px;max-height:none;padding:0 0 7px}
+  .product-item{flex:0 0 170px;width:170px;min-width:170px;max-width:170px;min-height:92px;grid-template-columns:32px minmax(0,1fr);gap:7px;margin:0;padding:10px 9px;border-color:#e3eae5;background:#fafcfa}
+  .product-thumb{width:32px;height:32px;font-size:16px}
+  .product-item b{overflow-wrap:anywhere}
+  .panel-add{width:100%;min-height:44px;margin-top:6px}
+  .analysis-panel{border-radius:15px;padding:13px}
+  .analysis-topline{gap:7px}
+  .analysis-topline h3{font-size:21px;line-height:1.16;margin:6px 0 7px}
+  .analysis-buttons{flex-shrink:0}
+  .icon-button{min-height:44px;min-width:44px}
+  .quality-line{gap:7px;margin:11px 0 13px}
+  .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .kpi{padding:14px 12px;border-radius:12px}
+  .kpi-label{font-size:9px;letter-spacing:0;white-space:normal;line-height:1.4;min-height:23px}
+  .kpi strong{font-size:clamp(18px,5.5vw,24px);letter-spacing:-.045em;padding:10px 0 6px;overflow-wrap:anywhere}
+  .kpi small{font-size:10px;line-height:1.45;min-height:0}
+  .kpi-lime{grid-column:1/-1;padding:17px 16px}
+  .kpi-lime .kpi-label{min-height:0}
+  .kpi-lime strong{font-size:clamp(28px,9vw,37px);padding:6px 0 4px}
+  .calc-wrap{padding:17px 12px 15px;margin-top:12px;border-radius:14px}
+  .calc-head{margin-bottom:12px}
+  .calc-head h4{font-size:19px;line-height:1.24}
+  .qty-shortcuts{gap:7px;margin:8px 0 13px}
+  .qty-shortcuts>span{flex:1 0 100%;margin-bottom:0}
+  .qty-shortcuts button{flex:1 1 0;min-width:0;min-height:44px;padding:9px 8px;font-size:13px}
+  .calc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px 9px}
+  .calc-grid>.input-field:nth-child(1),.calc-grid>.input-field:nth-child(2){grid-column:span 1}
+  .input-field>span{font-size:11px;line-height:1.35;min-height:30px;margin-bottom:5px}
+  .input-field input,.input-field select{font-size:16px;min-height:47px;padding:10px 9px}
+  .calc-grid>.input-field:nth-child(1) input{font-weight:850;font-size:19px}
+  .note{font-size:11px;line-height:1.6;margin-top:13px}
+  .bottom-grid{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:13px}
+  .breakdown-card,.cash-card{padding:16px;border-radius:13px}
+  .breakdown-row{font-size:12px}
+  .breakdown-row strong{max-width:48%;overflow-wrap:anywhere}
+  .total-line strong{font-size:24px}
+  .offers-head{margin-top:28px;scroll-margin-top:80px}
+  .offers-head h4{font-size:19px}
+  .offer-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .offer-actions .button{min-height:45px;font-size:13px}
+  .quotes-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+  .quotes-card{padding:15px 14px}
+  .quote-head b{font-size:13px}
+  .quote-head strong{font-size:15px}
+  .quote-detail{font-size:11px}
+  .quote-actions{gap:14px}
+  .quote-actions button,.quote-actions a{padding:9px 0;font-size:12px;min-height:40px;display:inline-flex;align-items:center}
+  .source-card{padding:16px 14px}
+  .source-links{gap:9px}
+  .source-links a{min-height:42px;display:inline-flex;align-items:center;font-size:11px;padding:10px}
+  .methodology{margin-top:32px;padding-bottom:34px}
+  .method-grid article p{font-size:12px}
+  .tools-section{padding-top:35px;padding-bottom:30px}
+  .tools-section p{line-height:1.6}
+  .tools-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .tools-actions .button{white-space:normal;line-height:1.25;padding:12px 9px;min-height:52px;width:100%;font-size:12px}
+  .tools-actions .button:last-child{grid-column:1/-1}
+  .footer{padding:25px 17px 30px}
+  .modal{position:fixed;inset:auto 0 0 0;margin:0;width:100%;max-width:100%;max-height:min(91dvh,900px);border:0;border-radius:22px 22px 0 0;padding:21px 18px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -16px 65px #001c2e4b;overscroll-behavior:contain}
+  .modal-header{margin-bottom:17px}
+  .modal-header h3{font-size:24px}
+  .modal-close{min-width:44px;width:44px;height:44px}
+  .modal-grid{gap:12px 9px}
+  .modal-grid .input-field span{font-size:11px;min-height:30px}
+  .modal form>.input-field>span{min-height:0}
+  .modal-actions{position:sticky;bottom:-21px;z-index:2;background:#fff;padding:12px 0 0;margin-top:18px;gap:8px}
+  .modal-actions .button{flex:1 1 0;min-height:48px;white-space:normal;font-size:12px;padding:10px}
+  .toast{bottom:calc(82px + env(safe-area-inset-bottom));left:12px;right:12px;max-width:none;font-size:13px}
+  .mobile-dock{position:fixed;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;align-items:stretch;bottom:0;left:0;right:0;z-index:25;padding:8px 9px calc(8px + env(safe-area-inset-bottom));border-top:1px solid #dbe3dd;background:#ffffffef;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 -6px 27px #0a241025}
+  .mobile-dock a,.mobile-dock button{border:0;background:transparent;color:#56665c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:5px 2px;min-height:55px;border-radius:12px;text-decoration:none;font:inherit;font-size:10px;font-weight:760;white-space:nowrap;line-height:1.15}
+  .mobile-dock a span,.mobile-dock button span{font-size:22px;font-weight:750;line-height:1.05}
+  .mobile-dock .dock-primary{background:#193326;color:#d6f98b}
+  .mobile-dock :is(a,button):active{background:#ddefd3;color:#1d3829}
+}
+@media(max-width:359px){
+  .site-header{padding-inline:12px}
+  .brand-text{font-size:18px}
+  .category-card{flex-basis:149px}
+  .calc-grid{grid-template-columns:1fr}
+  .calc-grid>.input-field:nth-child(1),.calc-grid>.input-field:nth-child(2){grid-column:auto}
+  .input-field>span{min-height:0}
+  .kpi strong{font-size:18px}
+  .modal-grid{grid-template-columns:1fr}
+  .modal-grid .span2{grid-column:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+  </style>
+
+
 </head>
 <body>
 <div class="app-shell">
@@ -73,6 +222,13 @@
             </div>
             <div class="calc-wrap">
               <div class="calc-head"><div><span class="section-kicker">ПАРАМЕТРЫ СДЕЛКИ</span><h4>Твой сценарий продаж</h4></div><span class="live-indicator">● Пересчёт сразу</span></div>
+              <div class="qty-shortcuts" role="group" aria-label="Быстрый выбор количества">
+                <span>Быстрый выбор:</span>
+                <button type="button" data-quick-qty="10">10</button>
+                <button type="button" data-quick-qty="50">50</button>
+                <button type="button" data-quick-qty="100" class="active">100</button>
+                <button type="button" data-quick-qty="500">500</button>
+              </div>
               <div class="calc-grid">
                 <label class="input-field input-primary"><span>Сколько продашь, шт.</span><input type="number" id="qty" data-calc="qty" min="1" max="1000000" step="1" value="100"></label>
                 <label class="input-field"><span>Цена продажи, BYN</span><input type="number" id="saleOverride" data-calc="saleOverride" min="0" step="0.01" placeholder="Средняя по рынку"></label>
@@ -88,7 +244,7 @@
               <article class="breakdown-card"><div class="section-kicker">ЧТО ОСТАНЕТСЯ</div><h4>Экономика партии</h4><div id="breakdownRows" class="breakdown-rows"></div><div class="total-line"><span>Расчётная прибыль</span><strong id="profitBottom">—</strong></div><div id="profitSignal" class="insight"></div></article>
               <article class="cash-card"><span class="section-kicker">ДЕНЕЖНЫЙ ПОТОК</span><h4>Не забывай об остатках</h4><div id="cashContent"></div><div class="cash-disclaimer">Прибыль и деньги на счёте — не одно и то же. Если минимальный заказ больше партии продаж, часть средств останется в товаре.</div></article>
             </div>
-            <div class="offers-head"><div><span class="section-kicker">ПОСТАВЩИКИ И МАГАЗИНЫ</span><h4>Предложения и цены</h4></div><div class="offer-actions"><button class="button button-outline" data-add-offer="wholesale">＋ Опт</button><button class="button button-outline" data-add-offer="retail">＋ Розница</button></div></div>
+            <div class="offers-head" id="offers"><div><span class="section-kicker">ПОСТАВЩИКИ И МАГАЗИНЫ</span><h4>Предложения и цены</h4></div><div class="offer-actions"><button class="button button-outline" data-add-offer="wholesale">＋ Опт</button><button class="button button-outline" data-add-offer="retail">＋ Розница</button></div></div>
             <div class="quotes-grid"><section class="quotes-card"><div class="quotes-title"><b>Оптовые закупки</b><span id="wholesaleCount">0</span></div><div id="wholesaleOffers"></div></section><section class="quotes-card"><div class="quotes-title"><b>Розничный рынок</b><span id="retailCount">0</span></div><div id="retailOffers"></div></section></div>
             <div class="source-card"><div><strong>Где проверить реальные цены?</strong><p>Ссылки открывают поиск. Цены не импортируются автоматически и не подтверждаются сервисом.</p></div><div id="searchLinks" class="source-links"></div></div>
           </div>
@@ -96,15 +252,21 @@
       </div>
     </section>
     <section class="section methodology"><span class="section-kicker">03 / БЕЗ МАГИИ</span><h2>Что учитываем. А что — нет.</h2><div class="method-grid"><article><span>↗</span><h4>Закупка с полной стоимостью</h4><p>Цена, валюта и ручной курс, доставка в Минск, сборы, минимальная партия, упаковки и доступный остаток.</p></article><article><span>≋</span><h4>Рынок без самообмана</h4><p>Среднее только по внесённым актуальным предложениям. Нельзя гарантировать минимальную цену во всей Беларуси или мире.</p></article><article><span>◫</span><h4>Осторожно с прогнозом</h4><p>Продажа всех единиц не гарантирована. Нужна отдельная проверка спроса, сезонности, рекламы, законности поставок и возвратов.</p></article></div></section>
-    <section class="section tools-section"><div><span class="section-kicker">04 / ДАННЫЕ</span><h2>Всё под твоим контролем.</h2><p>Каталог сохраняется на этом устройстве. Экспортируй резервную копию, чтобы не потерять данные.</p></div><div class="tools-actions"><button id="exportJson" class="button button-outline">↓ Экспорт JSON</button><button id="importJson" class="button button-outline">↑ Импорт JSON</button><button id="exportCsv" class="button button-outline">↓ Экспорт цен CSV</button><button id="importCsv" class="button button-outline">↑ Импорт цен CSV</button><button id="resetDemo" class="button button-quiet">Восстановить демо</button></div></section>
+    <section class="section tools-section" id="tools"><div><span class="section-kicker">04 / ДАННЫЕ</span><h2>Всё под твоим контролем.</h2><p>Каталог сохраняется на этом устройстве. Экспортируй резервную копию, чтобы не потерять данные.</p></div><div class="tools-actions"><button id="exportJson" class="button button-outline">↓ Экспорт JSON</button><button id="importJson" class="button button-outline">↑ Импорт JSON</button><button id="exportCsv" class="button button-outline">↓ Экспорт цен CSV</button><button id="importCsv" class="button button-outline">↑ Импорт цен CSV</button><button id="resetDemo" class="button button-quiet">Восстановить демо</button></div></section>
   </main>
+  <nav class="mobile-dock" aria-label="Навигация по мобильной версии">
+    <a href="#categories-section"><span aria-hidden="true">▦</span>Категории</a>
+    <a href="#workspace" class="dock-primary"><span aria-hidden="true">◉</span>Расчёт</a>
+    <a href="#offers"><span aria-hidden="true">≋</span>Цены</a>
+    <button type="button" id="mobileAdd"><span aria-hidden="true">＋</span>Товар</button>
+  </nav>
   <footer class="footer"><span class="brand-text">маржа<span class="brand-dot">.</span><small>BY</small></span><p>Инструмент для принятия решений, а не гарантия прибыли. Минск / Беларусь · Версия 2.0</p><a href="docs/BUSINESS_PLAN.md" target="_blank">Бизнес-план ↗</a></footer>
 </div>
 <dialog id="productDialog" class="modal"><form id="productForm" method="dialog"><div class="modal-header"><div><span class="section-kicker">КАТАЛОГ</span><h3 id="productDialogTitle">Новый товар</h3></div><button type="button" class="modal-close" data-close="productDialog" aria-label="Закрыть">×</button></div><input type="hidden" name="id"><label class="input-field"><span>Название товара *</span><input name="name" maxlength="100" required placeholder="Например, лампа для рабочего стола"></label><label class="input-field"><span>Артикул или модель</span><input name="sku" maxlength="80" placeholder="Модель / SKU"></label><label class="input-field"><span>Категория *</span><select name="category" id="productCategoryInput" required></select></label><div class="modal-actions"><button type="button" class="button button-outline" data-close="productDialog">Отмена</button><button type="submit" class="button button-accent">Сохранить товар</button></div></form></dialog>
 <dialog id="offerDialog" class="modal"><form id="offerForm" method="dialog"><div class="modal-header"><div><span class="section-kicker">ИСТОЧНИК ЦЕНЫ</span><h3 id="offerDialogTitle">Новое предложение</h3></div><button type="button" class="modal-close" data-close="offerDialog" aria-label="Закрыть">×</button></div><input type="hidden" name="id"><input type="hidden" name="type"><div class="modal-grid"><label class="input-field span2"><span>Поставщик / магазин *</span><input name="source" maxlength="120" required placeholder="Название компании"></label><label class="input-field"><span>Цена за штуку *</span><input name="price" type="number" required min="0.01" step="0.01"></label><label class="input-field"><span>Валюта</span><select name="currency"><option>BYN</option><option>RUB</option><option>USD</option><option>EUR</option><option>CNY</option></select></label><label class="input-field"><span>Курс: BYN за 1 валюты</span><input name="rate" type="number" required min="0.000001" step="any" value="1"></label><label class="input-field"><span>Доставка за заказ, BYN</span><input name="shipping" type="number" min="0" step="0.01" value="0"></label><label class="input-field"><span>Другие затраты, BYN</span><input name="fees" type="number" min="0" step="0.01" value="0"></label><label class="input-field"><span>Мин. заказ, шт.</span><input name="moq" type="number" min="1" step="1" value="1"></label><label class="input-field"><span>Кратность коробки, шт.</span><input name="pack" type="number" min="1" step="1" value="1"></label><label class="input-field"><span>Остаток, шт. (пусто = неизвестно)</span><input name="stock" type="number" min="0" step="1" placeholder="Неизвестно"></label><label class="input-field"><span>Дата проверки</span><input name="checked" type="date" required></label><label class="input-field span2"><span>Ссылка на страницу с ценой</span><input name="url" type="url" maxlength="1000" placeholder="https://..."></label></div><label class="checkbox-field"><input name="confirmed" type="checkbox"><span><b>Лично проверил цену и возможность доставки в Минск</b><small>Без подтверждения предложение будет сохранено, но не учтено в расчёте.</small></span></label><div class="modal-actions"><button type="button" class="button button-outline" data-close="offerDialog">Отмена</button><button type="submit" class="button button-accent">Сохранить предложение</button></div></form></dialog>
 <input id="fileJson" type="file" accept="application/json,.json" hidden><input id="fileCsv" type="file" accept="text/csv,.csv" hidden>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script>
+  <script>
 /* Маржа BY — calculation engine. Pure functions; works in browser and Node. */
 (function (root) {
   'use strict';
@@ -186,8 +348,8 @@
   root.MarzhaCore = core;
 })(typeof window !== 'undefined' ? window : globalThis);
 
-</script>
-<script>
+  </script>
+  <script>
 /* Маржа BY v2.0 — browser-only UI; no automatic price collection or telemetry. */
 (() => {
   'use strict';
@@ -340,7 +502,7 @@
     const defs=[['Опт РБ',`site:optlist.by ${base}`],['Поставщики',`site:deal.by ${base} оптом`],['Onlíner',`site:catalog.onliner.by ${base}`],['21vek',`site:21vek.by ${base}`],['Ozon',`site:ozon.by ${base}`]];
     $('searchLinks').innerHTML=defs.map(([label,q])=>`<a href="https://www.google.com/search?q=${encodeURIComponent(q)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`).join('');
   }
-  function render(){if(!current()&&db.products.length)db.selected=db.products[0].id;updateCategories();renderProductList();renderDetailHeader();renderNumbers();renderOffers();renderSearchLinks();save();}
+  function render(){if(!current()&&db.products.length)db.selected=db.products[0].id;updateCategories();renderProductList();renderDetailHeader();renderNumbers();renderOffers();renderSearchLinks();updateQuickQty();save();}
   function openProduct(id=null){
     const p=db.products.find(x=>x.id===id);
     const form=$('productForm');form.reset();form.elements.id.value=p?.id||'';form.elements.name.value=p?.name||'';form.elements.sku.value=p?.sku||'';form.elements.category.value=p?.category||(filter!=='all'?filter:'electronics');
@@ -404,9 +566,17 @@
     }
     if(!count)throw Error('Нет корректных строк для импорта'); db.selected=db.products[0]?.id||null;render();toast(`Добавлено ${count} предложений и ${products} новых товаров.`);
   }
+  function updateQuickQty(){
+    const v = Number($('qty').value);
+    document.querySelectorAll('[data-quick-qty]').forEach(btn=>{
+      const on = Number(btn.dataset.quickQty)===v;
+      btn.classList.toggle('active',on);
+      btn.setAttribute('aria-pressed',String(on));
+    });
+  }
   function bindEvents(){
     $('productCategoryInput').innerHTML=categories.map(c=>`<option value="${c.id}">${esc(c.label)}</option>`).join('');
-    $('openProduct').addEventListener('click',()=>openProduct());$('addProductAside').addEventListener('click',()=>openProduct());
+    $('openProduct').addEventListener('click',()=>openProduct());$('addProductAside').addEventListener('click',()=>openProduct());$('mobileAdd').addEventListener('click',()=>openProduct());
     $('editProduct').addEventListener('click',()=>openProduct(current()?.id));
     $('deleteProduct').addEventListener('click',()=>{const p=current();if(!p||!confirm(`Удалить «${p.name}» и все его предложения?`))return;db.products=db.products.filter(x=>x.id!==p.id);db.offers=db.offers.filter(x=>x.productId!==p.id);db.selected=db.products[0]?.id||null;render();toast('Товар удалён')});
     $('productSearch').addEventListener('input',renderProductList);
@@ -415,12 +585,17 @@
     for(const btn of document.querySelectorAll('[data-close]'))btn.addEventListener('click',()=>$(btn.dataset.close).close());
     for(const dialog of document.querySelectorAll('dialog'))dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
     $('categoryGrid').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(!b)return;filter=filter===b.dataset.category?'all':b.dataset.category;updateCategories();renderProductList();$('workspace').scrollIntoView({behavior:'smooth',block:'start'})});
-    $('productList').addEventListener('click',e=>{const b=e.target.closest('[data-product]');if(!b)return;db.selected=b.dataset.product;render();});
+    $('productList').addEventListener('click',e=>{const b=e.target.closest('[data-product]');if(!b)return;db.selected=b.dataset.product;render();if(window.matchMedia('(max-width: 900px)').matches){document.querySelector('.analysis-panel').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}});
+    document.querySelectorAll('[data-quick-qty]').forEach(btn=>btn.addEventListener('click',()=>{
+      const input=$('qty');input.value=btn.dataset.quickQty;
+      input.dispatchEvent(new Event('input',{bubbles:true}));
+      updateQuickQty();
+    }));
     document.querySelectorAll('[data-calc]').forEach(el=>el.addEventListener('input',()=>{
       const p=current();if(!p)return;const key=el.dataset.calc;
       p.calc={...defaults(),...p.calc};p.calc[key]=el.value;
       // Keep focus and caret: update only dependent fragments.
-      renderNumbers();renderOffers();renderProductList();save();
+      renderNumbers();renderOffers();renderProductList();updateQuickQty();save();
     }));
     document.querySelectorAll('[data-add-offer]').forEach(b=>b.addEventListener('click',()=>openOffer(b.dataset.addOffer)));
     $('detailBody').addEventListener('click',e=>{const edit=e.target.closest('[data-edit-offer]');const del=e.target.closest('[data-remove-offer]');if(edit)openOffer('wholesale',edit.dataset.editOffer);if(del){const o=db.offers.find(x=>x.id===del.dataset.removeOffer);if(!o||!confirm(`Удалить предложение «${o.source}»?`))return;db.offers=db.offers.filter(x=>x.id!==o.id);render();toast('Предложение удалено')}});
@@ -433,9 +608,9 @@
     $('resetDemo').addEventListener('click',()=>{if(!confirm('Удалить текущий каталог и восстановить демонстрационные товары?'))return;db=makeDemo();filter='all';render();toast('Демо-каталог восстановлен')});
     $('hideDemo').addEventListener('click',()=>{if(!confirm('Удалить демонстрационные товары и предложения? Собственные данные сохранятся.'))return;const keepWithReal=new Set(db.offers.filter(o=>!o.sample).map(o=>o.productId));db.products=db.products.filter(p=>!p.sample||keepWithReal.has(p.id)).map(p=>({...p,sample:false}));db.offers=db.offers.filter(o=>!o.sample);db.selected=db.products[0]?.id||null;filter='all';render();toast('Демо удалено. Создай первый реальный товар.')});
   }
-  bindEvents();render();
+  bindEvents();render();updateQuickQty();
 })();
 
-</script>
+  </script>
 </body>
 </html>
