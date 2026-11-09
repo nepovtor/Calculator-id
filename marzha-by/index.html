@@ -165,6 +165,335 @@ button,a{ -webkit-tap-highlight-color:transparent }
   </style>
 
 
+<style>
+/* Маржа BY v3 · utility-first workspace, no marketing hero or decorative glass UI. */
+:root{--bg:#f7f8f7;--dark:#192622;--ink:#1b2a25;--muted:#69766e;--line:#dfe6df;--lime:#d6e7d5;--pine:#237a59;--white:#fff;--shadow:none}
+html{scroll-padding-top:85px}
+body.app-v3{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f7f8f7;color:#192923;font-size:14px;line-height:1.5}
+.app-v3 .app-shell{max-width:1280px;background:#f7f8f7;overflow:visible}
+.app-v3 .site-header{height:64px;min-height:64px;background:#fff;color:#1c3129;padding:0 38px;border-bottom:1px solid #dce5df;position:sticky;top:0;z-index:35;box-shadow:none}
+.app-v3 .brand-symbol{background:#1c4939;color:#fff;border-radius:9px;width:34px;height:34px;font-size:19px}
+.app-v3 .brand-text{font-size:21px;color:#1a3328;letter-spacing:-.07em}
+.app-v3 .brand-dot{color:#24815d}
+.app-v3 .brand-text small{font-size:10px;opacity:.8}
+.app-v3 .header-caption{color:#708078;font-weight:500}
+.app-v3 .header-caption .status-dot{background:#438a61;box-shadow:none}
+.app-v3 .header-caption .divider{color:#b3c0b7}
+.app-v3 .region-pill{color:#66766e}
+.app-v3 .header-actions .button{background:#214d3b;color:#fff;border-radius:9px;box-shadow:none;font-weight:700;min-height:39px;padding:9px 14px}
+.app-v3 .button{box-shadow:none;border-radius:9px;transition:background .15s,border-color .15s;min-height:40px}
+.app-v3 .button:hover{transform:none;box-shadow:none}
+.app-v3 .button-accent{background:#214d3b;color:#fff;border-color:#214d3b}
+.app-v3 .button-accent:hover{background:#16392b}
+.app-v3 .button-outline{background:#fff;border-color:#cddad0;color:#304d3b}
+.app-v3 .button-quiet{background:#f3f5f3;color:#56655b}
+.app-v3 main{padding-bottom:24px}
+.app-v3 .app-intro{display:flex;justify-content:space-between;gap:26px;align-items:center;padding:38px 38px 22px}
+.app-v3 .intro-kicker{font-size:10px;font-weight:800;letter-spacing:.115em;color:#498366;margin:0 0 11px}
+.app-v3 .intro-kicker span{color:#a2b0a5;padding:0 5px}
+.app-v3 .app-intro h1{font-size:clamp(29px,3.4vw,42px);letter-spacing:-.052em;line-height:1.1;color:#142720;font-weight:800;margin:0 0 10px}
+.app-v3 .app-intro h1 span{color:#2e7960}
+.app-v3 .intro-main>p:last-child{color:#637269;margin:0;font-size:13px}
+.app-v3 .help-toggle{position:relative;flex:0 0 auto;max-width:340px;font-size:12px}
+.app-v3 .help-toggle summary{display:flex;align-items:center;justify-content:space-between;gap:15px;list-style:none;cursor:pointer;background:#fff;border:1px solid #d6e2d9;border-radius:10px;color:#264d36;padding:12px 14px;font-weight:700}
+.app-v3 .help-toggle summary::-webkit-details-marker{display:none}
+.app-v3 .help-toggle summary span{font-size:16px;font-weight:500}
+.app-v3 .help-toggle[open] summary{border-radius:10px 10px 0 0}
+.app-v3 .help-toggle ol{position:absolute;z-index:25;top:100%;right:0;min-width:290px;max-width:340px;background:#fff;border:1px solid #d6e2d9;border-top:0;border-radius:0 0 10px 10px;margin:0;padding:17px 22px 15px 39px;box-shadow:0 13px 23px #102b1912;color:#4b6354;line-height:1.65}
+.app-v3 .help-toggle li+li{margin-top:9px}
+.app-v3 .demo-banner{margin:0 38px 0;background:#f4f6f0;border:1px solid #e2e9da;border-radius:9px;padding:11px 13px;gap:12px;transform:none;box-shadow:none}
+.app-v3 .demo-banner p{font-size:11.5px;line-height:1.6;color:#647267}
+.app-v3 .demo-banner b{color:#294333}
+.app-v3 .demo-badge{flex:0 0 auto;color:#60735b;background:#e2ebdb;font-size:9px;border-radius:5px;padding:5px 9px}
+.app-v3 .demo-banner .text-button{font-size:11px;text-decoration:underline;text-underline-offset:3px;color:#50725a}
+.app-v3 #workspace{padding:28px 38px 0;scroll-margin-top:67px}
+.app-v3 #workspace>.section-heading{margin-bottom:17px;align-items:center}
+.app-v3 #workspace>.section-heading h2{font-size:23px;letter-spacing:-.04em;margin:0 0 4px;color:#1c3225}
+.app-v3 #workspace>.section-heading p{font-size:12px;color:#708077}
+.app-v3 #workspace>.section-heading .button{min-height:38px;font-size:11px;padding:9px 12px}
+.app-v3 .workspace{display:grid;grid-template-columns:270px minmax(0,1fr);align-items:start;gap:16px}
+.app-v3 .product-panel,.app-v3 .analysis-panel{background:#fff;border:1px solid #e0e7e0;border-radius:12px;min-width:0;box-shadow:none}
+.app-v3 .product-panel{position:sticky;top:83px;padding:17px 13px;max-height:calc(100dvh - 105px);display:flex;flex-direction:column;overflow:visible}
+.app-v3 .embedded-categories{padding:0;margin:0 0 18px;flex:none}
+.app-v3 .embedded-categories .section-heading{display:block;margin:0 0 10px}
+.app-v3 .filter-heading{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.app-v3 .filter-heading strong{font-size:12px;font-weight:800;color:#34493c}
+.app-v3 .filter-heading span{font-size:10px;color:#8a9b8b}
+.app-v3 .category-grid{display:flex;flex-wrap:wrap;gap:6px}
+.app-v3 .category-card{flex:0 1 auto;width:auto;max-width:100%;min-height:0;min-width:0;background:#f5f7f5;border:1px solid #e0e7df;border-radius:7px;padding:8px 10px;display:inline-flex;align-items:center;justify-content:center;box-shadow:none;text-align:left}
+.app-v3 .category-card:hover{transform:none;box-shadow:none;border-color:#9cb9a4}
+.app-v3 .category-card.active{background:#245842;color:#fff;border:1px solid #245842;box-shadow:none}
+.app-v3 .category-card .category-icon,.app-v3 .category-card .category-count,.app-v3 .category-card .category-arrow{display:none}
+.app-v3 .category-card .category-name{font-size:11px;font-weight:700;line-height:1.25;letter-spacing:0;color:inherit}
+.app-v3 .panel-top{border-top:1px solid #edf0ed;padding:16px 2px 9px;flex:none}
+.app-v3 .panel-top strong{font-size:12px;color:#35463e}
+.app-v3 .count-pill{background:#e9eee9;color:#5b7062;border-radius:5px;font-size:10px}
+.app-v3 .searchbox{flex:none;min-height:42px;margin:0 0 9px;background:#f8f9f8;border-color:#e1e9e3;border-radius:8px}
+.app-v3 .searchbox input{font-size:13px}
+.app-v3 .product-list{display:flex;flex-direction:column;overflow:auto;overscroll-behavior:contain;max-height:none;min-height:80px;flex:1;gap:5px;scrollbar-width:thin}
+.app-v3 .product-item{flex:0 0 auto;min-height:0;min-width:0;width:100%;max-width:none;grid-template-columns:1fr;border:1px solid #eaf0eb;border-radius:9px;padding:11px 10px;margin:0;background:#fff;text-align:left}
+.app-v3 .product-item:hover{background:#f7faf7;transform:none}
+.app-v3 .product-item.active{background:#edf4ee;border:1px solid #9abfa3;box-shadow:none}
+.app-v3 .product-thumb{display:none}
+.app-v3 .product-item strong{font-size:12px;line-height:1.35;font-weight:750;color:#24382d}
+.app-v3 .product-item small{font-size:10px;margin-top:5px;color:#8c998e}
+.app-v3 .product-item .mini-profit{font-size:11px;margin-top:7px;color:#3f7450}
+.app-v3 .panel-add{flex:none;margin:12px 0 0;min-height:43px;border:1px solid #b6ccbb;background:#fff;color:#286042;font-size:12px;border-radius:9px;padding:11px 12px}
+.app-v3 .analysis-panel{padding:24px 25px;overflow:visible}
+.app-v3 .stage-label{font-size:10px;font-weight:850;letter-spacing:.09em;color:#2f7659;margin:0 0 10px}
+.app-v3 .stage-label span{color:#879a8d}
+.app-v3 .analysis-topline{align-items:start;gap:15px}
+.app-v3 .analysis-topline h3{font-size:clamp(23px,2.4vw,30px);margin:1px 0 6px;font-weight:800;color:#1b3024;line-height:1.2}
+.app-v3 .analysis-topline .micro-label{display:none}
+.app-v3 .analysis-topline p{font-size:11px;color:#829086}
+.app-v3 .analysis-buttons{gap:6px;flex:none}
+.app-v3 .icon-button{min-width:35px;min-height:35px;border-radius:7px;background:#f8faf8;color:#56705b}
+.app-v3 .quality-line{margin:12px 0 17px;gap:9px;align-items:center}
+.app-v3 .quality-pill{background:#ecf1e9;color:#52714a;border-radius:5px;padding:5px 8px;font-size:9px;font-weight:800}
+.app-v3 .quality-pill.real{background:#e7f2eb;color:#207347}
+.app-v3 .subtext{font-size:10px;color:#87988a}
+.app-v3 .results-heading{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:0 0 11px}
+.app-v3 .results-heading .stage-label{color:#718274;margin:0}
+.app-v3 .results-heading h4{margin:4px 0 0;font-size:16px;letter-spacing:-.02em}
+.app-v3 .results-unit{font-size:10px;color:#8d9b91}
+.app-v3 .kpi-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-areas:'profit buy retail';gap:9px}
+.app-v3 .kpi:nth-child(1){grid-area:buy}
+.app-v3 .kpi:nth-child(2){grid-area:retail}
+.app-v3 .kpi:nth-child(3){grid-area:profit}
+.app-v3 .kpi{border:1px solid #e2e9e3;background:#fbfcfb;color:#1b3024;padding:18px 16px;border-radius:9px;min-width:0}
+.app-v3 .kpi-dark{background:#fbfcfb;color:#1b3024}
+.app-v3 .kpi-lime{background:#eaf2e9;border-color:#c9dfce;color:#1c3b2b}
+.app-v3 .kpi-label,.app-v3 .kpi-dark .kpi-label,.app-v3 .kpi-lime .kpi-label{font-size:9px;letter-spacing:.01em;line-height:1.4;white-space:normal;color:#6c806f;font-weight:800;min-height:0}
+.app-v3 .kpi strong{font-size:clamp(18px,2.5vw,26px);margin:10px 0 6px;padding:0;line-height:1.15;font-weight:810;color:#203c2b;letter-spacing:-.045em;white-space:normal}
+.app-v3 .kpi-lime strong{font-size:clamp(24px,3vw,32px);color:#1a573a}
+.app-v3 .kpi small,.app-v3 .kpi-dark small,.app-v3 .kpi-lime small{font-size:10px;line-height:1.4;color:#708475;min-height:0}
+.app-v3 .kpi.negative{background:#fff1ed;border-color:#f1d1c9}
+.app-v3 .kpi.negative strong{color:#a84534}
+.app-v3 .stage-title{display:flex;align-items:start;gap:12px;margin:0 0 15px}
+.app-v3 .stage-number{flex:0 0 30px;height:30px;border:1px solid #d2e2d5;border-radius:8px;background:#eef5ef;color:#397150;display:grid;place-items:center;font-size:12px;font-weight:850}
+.app-v3 .stage-number.plain{background:#f3f5f3;color:#718072;border-color:#e1e7e1}
+.app-v3 .stage-title h4{margin:1px 0 2px;font-size:17px;line-height:1.3;font-weight:790}
+.app-v3 .stage-title p{margin:0;color:#7b897f;font-size:11px;line-height:1.5}
+.app-v3 .price-section{margin-top:22px;border-top:1px solid #e6ebe6;padding-top:21px;scroll-margin-top:88px}
+.app-v3 .offers-head{margin:0 0 8px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.app-v3 .offers-head h4{font-size:12px;font-weight:700;color:#587261;margin:0;letter-spacing:0}
+.app-v3 .offer-actions{gap:6px}
+.app-v3 .offer-actions .button{font-size:11px;padding:8px 11px;min-height:37px;border-radius:7px}
+.app-v3 .offer-details{background:#fbfcfb;border:1px solid #e1e8e1;border-radius:9px}
+.app-v3 .offer-summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 15px;font-size:12px;color:#42584a;font-weight:800}
+.app-v3 .offer-summary::-webkit-details-marker{display:none}
+.app-v3 .offer-summary small{font-size:10px;color:#8a9a8b;font-weight:500;margin-left:8px}
+.app-v3 .offer-summary .summary-action{font-size:10px;color:#597f66;font-weight:650;white-space:nowrap}
+.app-v3 .offer-summary b{font-size:16px;margin-left:5px}
+.app-v3 .offer-details[open]>.offer-summary{border-bottom:1px solid #e4ebe5}
+.app-v3 .offer-details[open]>.offer-summary .summary-action b{display:inline-block;transform:rotate(180deg)}
+.app-v3 .quotes-grid{grid-template-columns:1fr 1fr;gap:9px;padding:12px}
+.app-v3 .quotes-card{background:#fff;border:1px solid #e4ebe5;border-radius:8px;padding:12px 13px}
+.app-v3 .quotes-title{margin:0 0 7px}
+.app-v3 .quotes-title b{font-size:12px}
+.app-v3 .quotes-title span{font-size:10px;border-radius:4px}
+.app-v3 .quote{padding:11px 0;border-bottom:1px solid #edf0ed}
+.app-v3 .quote-head b{font-size:11px}
+.app-v3 .quote-head strong{font-size:12px;color:#203c2c}
+.app-v3 .quote-detail{font-size:10px;line-height:1.5;margin:5px 0;color:#7e8f82}
+.app-v3 .quote-tag{font-size:9px;border-radius:4px}
+.app-v3 .quote-actions{margin-top:7px;gap:10px}
+.app-v3 .quote-actions button,.app-v3 .quote-actions a{font-size:10px}
+.app-v3 .source-card{margin:0 12px 12px;border:1px solid #e5eae5;background:#f7f9f7;padding:12px;border-radius:7px}
+.app-v3 .source-card strong{font-size:11px}
+.app-v3 .source-card p{font-size:10px}
+.app-v3 .source-links a{font-size:10px;border-radius:6px;padding:6px 8px}
+.app-v3 .calc-wrap{border:0;border-top:1px solid #e6ebe6;border-radius:0;margin-top:22px;padding:22px 0 0}
+.app-v3 .calc-head{margin-bottom:12px}
+.app-v3 .calc-head h4{font-size:12px;color:#69816e;letter-spacing:0;font-weight:650;margin:0}
+.app-v3 .live-indicator{font-size:10px;color:#327450;margin-top:0}
+.app-v3 .qty-shortcuts{margin:2px 0 14px;gap:6px}
+.app-v3 .qty-shortcuts>span{font-size:11px}
+.app-v3 .qty-shortcuts button{border-radius:6px;min-height:36px;padding:7px 13px;font-size:11px}
+.app-v3 .qty-shortcuts button.active{background:#244a37;color:#fff;border-color:#244a37}
+.app-v3 .calc-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.app-v3 .input-field>span{color:#556d5c;font-size:11px;font-weight:650;line-height:1.35;margin-bottom:5px}
+.app-v3 .input-field input,.app-v3 .input-field select{background:#fff;min-height:42px;border-radius:7px;border-color:#d7e2d9;padding:9px 11px;font-size:14px}
+.app-v3 .input-primary input{border-color:#82aa90;background:#f8fcf8;font-weight:800}
+.app-v3 .tax-info{margin-top:13px}
+.app-v3 .tax-info summary{cursor:pointer;font-size:10px;font-weight:650;color:#65816a}
+.app-v3 .tax-info .note{margin:9px 0 0;padding:11px 12px;border:1px solid #e8ece8;border-radius:7px;color:#6e8371}
+.app-v3 .expenses-title{margin:24px 0 12px;padding-top:20px;border-top:1px solid #e6ebe6}
+.app-v3 .bottom-grid{margin-top:0;grid-template-columns:1.2fr 1fr;gap:10px}
+.app-v3 .breakdown-card,.app-v3 .cash-card{padding:17px;border-radius:9px;border-color:#e1e8e1;background:#fff}
+.app-v3 .breakdown-card .section-kicker,.app-v3 .cash-card .section-kicker{display:none}
+.app-v3 .breakdown-card h4,.app-v3 .cash-card h4{font-size:14px;line-height:1.3;margin:0 0 15px;letter-spacing:-.02em}
+.app-v3 .breakdown-row{font-size:11px;gap:9px}
+.app-v3 .breakdown-rows{gap:10px}
+.app-v3 .total-line{margin-top:18px;padding-top:12px}
+.app-v3 .total-line span{font-size:12px}
+.app-v3 .total-line strong{font-size:18px}
+.app-v3 .insight{font-size:10px;background:#f4f8f4;color:#567561;margin-top:12px;border-radius:6px}
+.app-v3 .cash-stat{font-size:11px;padding:9px 0}
+.app-v3 .cash-stat.big strong{font-size:14px}
+.app-v3 .cash-disclaimer{font-size:10px}
+.app-v3 .secondary-section{padding:26px 38px 0;background:transparent;margin:0}
+.app-v3 .secondary-section h2{font-size:20px;letter-spacing:-.03em;margin:0 0 9px}
+.app-v3 .method-grid{margin-top:13px;gap:9px}
+.app-v3 .method-grid article{padding:15px 16px;border-radius:9px;border-color:#e2e9e2}
+.app-v3 .method-grid article span{display:none}
+.app-v3 .method-grid h4{font-size:12px;margin:0 0 6px}
+.app-v3 .method-grid p{font-size:11px;color:#718477;line-height:1.55}
+.app-v3 #tools{display:flex;justify-content:space-between;gap:14px;align-items:center;padding-bottom:28px}
+.app-v3 #tools h2{margin:0 0 5px}
+.app-v3 #tools p{font-size:11px}
+.app-v3 .tools-actions{gap:7px}
+.app-v3 .tools-actions .button{font-size:10px;padding:8px 10px;min-height:37px}
+.app-v3 .footer{padding:19px 38px;background:#edf2ed;color:#506659;gap:15px}
+.app-v3 .footer .brand-text{font-size:16px;color:#375745}
+.app-v3 .footer p{font-size:10px;color:#768b7c}
+.app-v3 .footer a{color:#306849;font-size:10px}
+.app-v3 .modal{box-shadow:0 25px 90px #10201630;border-color:#dce7dc}
+.app-v3 .modal::backdrop{background:#10201aaa}
+.app-v3 .modal-close{font-size:22px}
+.app-v3 .toast{background:#214d38}
+@media(max-width:1050px){
+ .app-v3 .site-header{padding:0 22px}
+ .app-v3 .app-intro{padding:30px 23px 19px}
+ .app-v3 .demo-banner{margin-inline:23px}
+ .app-v3 #workspace{padding:25px 23px 0}
+ .app-v3 .workspace{grid-template-columns:233px minmax(0,1fr);gap:12px}
+ .app-v3 .analysis-panel{padding:18px}
+ .app-v3 .calc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .app-v3 .secondary-section{padding-inline:23px}
+ .app-v3 .footer{padding-inline:23px}
+}
+@media(max-width:850px){
+ .app-v3 .workspace{grid-template-columns:minmax(0,1fr)}
+ .app-v3 .product-panel{position:static;max-height:none;overflow:hidden}
+ .app-v3 .category-grid{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:0 0 3px}
+ .app-v3 .category-card{flex:0 0 auto;white-space:nowrap}
+ .app-v3 .product-list{display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;max-height:none;min-height:0;scroll-snap-type:x proximity;padding:0 0 6px}
+ .app-v3 .product-item{flex:0 0 185px;width:185px;min-width:185px;max-width:185px;scroll-snap-align:start}
+ .app-v3 .panel-add{width:100%}
+ .app-v3 .quotes-grid{grid-template-columns:1fr 1fr}
+ .app-v3 .method-grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media(max-width:620px){
+ html{scroll-padding-top:70px}
+ body.app-v3{padding-bottom:calc(76px + env(safe-area-inset-bottom));overflow-x:hidden;font-size:13px}
+ .app-v3 .app-shell{width:100%;overflow:clip}
+ .app-v3 .site-header{height:57px;min-height:57px;padding:0 15px;gap:9px}
+ .app-v3 .brand-symbol{width:31px;height:31px}
+ .app-v3 .brand-text{font-size:19px}
+ .app-v3 .header-actions .button{min-height:37px;font-size:11px;padding:8px 10px}
+ .app-v3 .app-intro{display:block;padding:25px 17px 13px}
+ .app-v3 .intro-kicker{font-size:9px;margin:0 0 7px}
+ .app-v3 .app-intro h1{font-size:clamp(26px,7vw,32px);line-height:1.12;margin-bottom:8px}
+ .app-v3 .intro-main>p:last-child{font-size:12px;line-height:1.5}
+ .app-v3 .help-toggle{margin-top:13px;max-width:none;display:block}
+ .app-v3 .help-toggle summary{padding:9px 11px;min-height:40px;font-size:11px;border-radius:8px}
+ .app-v3 .help-toggle ol{position:static;max-width:none;min-width:0;border-radius:0 0 8px 8px;box-shadow:none;padding:13px 16px 13px 32px;font-size:11px}
+ .app-v3 .demo-banner{display:flex;flex-wrap:wrap;gap:6px 9px;padding:9px 12px;margin:0 15px;font-size:11px}
+ .app-v3 .demo-badge{font-size:8px;padding:5px 6px}
+ .app-v3 .demo-banner p{flex:1 1 65%;font-size:10px;line-height:1.5}
+ .app-v3 .demo-banner .text-button{display:none}
+ .app-v3 #workspace{padding:16px 12px 0;scroll-margin-top:65px}
+ .app-v3 #workspace>.section-heading{margin:0 2px 10px;display:flex;align-items:center;gap:8px}
+ .app-v3 #workspace>.section-heading h2{font-size:18px;margin-bottom:0}
+ .app-v3 #workspace>.section-heading p{display:none}
+ .app-v3 #workspace>.section-heading .button{display:none}
+ .app-v3 .workspace{gap:10px}
+ .app-v3 .product-panel{padding:12px;border-radius:10px}
+ .app-v3 .embedded-categories{margin-bottom:9px}
+ .app-v3 .embedded-categories .section-heading{margin-bottom:8px}
+ .app-v3 .filter-heading strong{font-size:11px}
+ .app-v3 .filter-heading span{font-size:9px}
+ .app-v3 .category-grid{gap:5px;padding:1px 0 6px}
+ .app-v3 .category-card{min-height:34px;padding:7px 10px;border-radius:6px}
+ .app-v3 .category-card .category-name{font-size:10px}
+ .app-v3 .panel-top{padding:10px 2px 8px}
+ .app-v3 .searchbox{height:39px;min-height:39px;margin-bottom:8px}
+ .app-v3 .searchbox input{font-size:16px}
+ .app-v3 .product-list{gap:7px}
+ .app-v3 .product-item{flex:0 0 176px;min-width:176px;max-width:176px;width:176px;min-height:80px;padding:10px 9px;border-radius:8px}
+ .app-v3 .product-item strong{font-size:11px}
+ .app-v3 .product-item small{font-size:9px}
+ .app-v3 .product-item .mini-profit{font-size:10px;margin-top:5px}
+ .app-v3 .panel-add{margin-top:8px;padding:9px;min-height:38px;font-size:11px}
+ .app-v3 .analysis-panel{padding:15px 12px;border-radius:10px;scroll-margin-top:67px}
+ .app-v3 .stage-label{font-size:9px;margin:0 0 7px}
+ .app-v3 .analysis-topline{gap:9px}
+ .app-v3 .analysis-topline h3{font-size:20px;margin:2px 0 4px}
+ .app-v3 .analysis-topline p{font-size:10px}
+ .app-v3 .icon-button{min-height:36px;min-width:36px;width:36px;height:36px;border-radius:7px}
+ .app-v3 .quality-line{gap:6px;margin:10px 0 14px;flex-wrap:wrap}
+ .app-v3 .quality-pill{font-size:8px;padding:4px 7px}
+ .app-v3 .subtext{font-size:9px}
+ .app-v3 .results-heading{margin-bottom:8px}
+ .app-v3 .results-heading h4{font-size:14px;margin-top:3px}
+ .app-v3 .results-unit{font-size:9px}
+ .app-v3 .kpi-grid{grid-template-columns:1fr 1fr;grid-template-areas:'profit profit' 'buy retail';gap:7px}
+ .app-v3 .kpi{border-radius:8px;padding:12px 11px}
+ .app-v3 .kpi-label{font-size:9px;letter-spacing:0;min-height:0;line-height:1.35}
+ .app-v3 .kpi strong{font-size:clamp(18px,5.1vw,22px);padding:0;margin:7px 0 3px}
+ .app-v3 .kpi small{font-size:9px}
+ .app-v3 .kpi-lime{padding:14px 14px}
+ .app-v3 .kpi-lime strong{font-size:clamp(26px,8.1vw,32px);margin:3px 0}
+ .app-v3 .price-section{margin-top:17px;padding-top:16px;scroll-margin-top:66px}
+ .app-v3 .stage-title{gap:9px;margin-bottom:10px}
+ .app-v3 .stage-number{flex:0 0 27px;height:27px;font-size:11px;border-radius:7px}
+ .app-v3 .stage-title h4{font-size:15px;margin:1px 0 2px}
+ .app-v3 .stage-title p{font-size:10px;line-height:1.45}
+ .app-v3 .offers-head{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-bottom:9px}
+ .app-v3 .offers-head h4{font-size:11px;line-height:1.35}
+ .app-v3 .offer-actions{display:flex;gap:5px;margin:0}
+ .app-v3 .offer-actions .button{min-height:37px;padding:8px 9px;font-size:10px}
+ .app-v3 .offer-summary{font-size:11px;min-height:43px;padding:10px 11px}
+ .app-v3 .offer-summary small{font-size:9px;margin-left:0;display:block}
+ .app-v3 .offer-summary .summary-action{font-size:10px}
+ .app-v3 .quotes-grid{grid-template-columns:1fr;gap:8px;padding:9px}
+ .app-v3 .source-card{margin:0 9px 9px}
+ .app-v3 .calc-wrap{margin-top:17px;padding:17px 0 0}
+ .app-v3 .calc-head{margin-bottom:9px}
+ .app-v3 .calc-head h4{font-size:11px}
+ .app-v3 .live-indicator{font-size:9px}
+ .app-v3 .qty-shortcuts{margin:0 0 12px;gap:5px}
+ .app-v3 .qty-shortcuts>span{flex:1 0 100%;font-size:10px}
+ .app-v3 .qty-shortcuts button{min-height:39px;padding:8px 10px;font-size:12px}
+ .app-v3 .calc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 9px}
+ .app-v3 .input-field>span{font-size:10px;min-height:27px;line-height:1.3}
+ .app-v3 .input-field input,.app-v3 .input-field select{font-size:16px;min-height:44px;padding:9px}
+ .app-v3 .calc-grid>.input-field:nth-child(1) input{font-size:17px}
+ .app-v3 .tax-info summary{font-size:10px}
+ .app-v3 .expenses-title{margin:20px 0 11px;padding-top:16px}
+ .app-v3 .bottom-grid{grid-template-columns:1fr;gap:9px}
+ .app-v3 .breakdown-card,.app-v3 .cash-card{padding:14px 13px;border-radius:8px}
+ .app-v3 .breakdown-card h4,.app-v3 .cash-card h4{font-size:13px;margin-bottom:12px}
+ .app-v3 .breakdown-row{font-size:11px}
+ .app-v3 .total-line strong{font-size:19px}
+ .app-v3 .secondary-section{padding:25px 15px 0}
+ .app-v3 .secondary-section h2{font-size:17px}
+ .app-v3 .method-grid{grid-template-columns:1fr;gap:7px}
+ .app-v3 .method-grid article{padding:12px;border-radius:8px}
+ .app-v3 .method-grid h4{font-size:11px}
+ .app-v3 .method-grid p{font-size:10px}
+ .app-v3 #tools{display:block;padding-bottom:22px}
+ .app-v3 #tools .tools-actions{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:7px}
+ .app-v3 #tools .tools-actions .button{width:100%;min-height:44px;padding:9px 7px;font-size:10px}
+ .app-v3 .footer{padding:20px 15px 24px}
+ .app-v3 .mobile-dock{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 -5px 20px #2543330d;border-top:1px solid #dbe6dd}
+ .app-v3 .mobile-dock a,.app-v3 .mobile-dock button{color:#516c57;font-size:10px;font-weight:650;border-radius:8px}
+ .app-v3 .mobile-dock a span,.app-v3 .mobile-dock button span{font-size:20px}
+ .app-v3 .mobile-dock .dock-primary{background:#244f3c;color:#fff}
+ .app-v3 .modal{border-radius:15px 15px 0 0}
+ .app-v3 .modal-actions{padding-bottom:4px}
+}
+@media(max-width:359px){
+ .app-v3 .site-header{padding-inline:10px}
+ .app-v3 .brand-text{font-size:17px}
+ .app-v3 .app-intro h1{font-size:25px}
+ .app-v3 .offer-actions .button{padding-inline:6px;font-size:9px}
+ .app-v3 .calc-grid{grid-template-columns:1fr}
+ .app-v3 .input-field>span{min-height:0}
+}
+
+</style>
 </head>
 <body>
 <div class="app-shell">
@@ -267,6 +596,141 @@ button,a{ -webkit-tap-highlight-color:transparent }
 <input id="fileJson" type="file" accept="application/json,.json" hidden><input id="fileCsv" type="file" accept="text/csv,.csv" hidden>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script>
+/* Marzha BY / workspace edition: restructure the existing application without replacing its calculation engine or saved data. */
+(() => {
+  'use strict';
+  const $ = selector => document.querySelector(selector);
+  const create = (tag, cls, html) => {
+    const el = document.createElement(tag);
+    el.className = cls;
+    if (html !== undefined) el.innerHTML = html;
+    return el;
+  };
+  const main = $('main');
+  if (!main || !$('#workspace') || !$('.analysis-panel')) return;
+  document.title = 'Маржа BY — калькулятор прибыли для торговли';
+  $('.hero')?.remove();
+  $('.value-rail')?.remove();
+  document.body.classList.add('app-v3');
+
+  const intro = create('section', 'app-intro', `
+    <div class="intro-main"><p class="intro-kicker">МАРЖА BY <span>·</span> АНАЛИЗ ЗАКУПКИ</p>
+      <h1>Сколько заработаю <span>на товаре?</span></h1>
+      <p>Проверьте предложение поставщика до того, как вложите деньги в партию.</p>
+    </div>
+    <details class="help-toggle"><summary>Как пользоваться <span aria-hidden="true">+</span></summary>
+      <ol><li><b>Выберите товар</b> слева или создайте свой.</li><li><b>Проверьте цены</b> поставщика и розничных магазинов. Примеры помечены как демо.</li><li><b>Укажите количество</b> и свои расходы. Прибыль пересчитается сразу.</li></ol>
+    </details>
+  `);
+  main.prepend(intro);
+
+  const banner = $('#demoBanner');
+  if (banner) {
+    banner.classList.add('compact-demo');
+    const p = banner.querySelector('p');
+    if (p) p.innerHTML = '<b>Демо-режим.</b> Цены вымышленные — они показывают, как работает расчёт. Для решения о закупке добавьте проверенные предложения.';
+    const label = banner.querySelector('.demo-badge'); if(label) label.textContent = 'ПРИМЕР';
+    const remove = $('#hideDemo'); if(remove) remove.textContent = 'Очистить примеры';
+  }
+
+  const ws = $('#workspace');
+  const wsHeading = ws.querySelector(':scope > .section-heading');
+  if (wsHeading) {
+    wsHeading.querySelector('.section-kicker')?.remove();
+    const title = wsHeading.querySelector('h2');
+    if (title) title.textContent = 'Рабочий расчёт';
+    const desc = wsHeading.querySelector('p');
+    if (desc) desc.textContent = 'Выберите товар, посмотрите исходные цены и настройте свою партию.';
+  }
+  const cats = $('#categories-section');
+  const panel = $('.product-panel');
+  if (cats && panel) {
+    cats.classList.add('embedded-categories');
+    const heading = cats.querySelector('.section-heading');
+    if (heading) heading.innerHTML = '<div class="filter-heading"><strong>Категория</strong><span>Нажмите, чтобы отфильтровать</span></div>';
+    panel.prepend(cats);
+  }
+  const panelTop = $('.panel-top strong'); if(panelTop) panelTop.textContent = 'Товары';
+  const search = $('#productSearch'); if(search) search.placeholder = 'Найти товар или SKU';
+  const asideAdd = $('#addProductAside'); if(asideAdd) asideAdd.textContent = '+ Создать товар';
+
+  const detail = $('#detailBody');
+  const head = $('.analysis-topline');
+  if (head) {
+    head.insertAdjacentHTML('beforebegin', '<p class="stage-label">01 <span> / ВЫБРАННЫЙ ТОВАР</span></p>');
+    const meta = $('#productMeta'); if(meta) meta.setAttribute('title','Артикул или модель для сравнения одинаковых товаров');
+  }
+  const quality = $('.quality-line');
+  if (quality) quality.insertAdjacentHTML('afterend','<div class="results-heading"><div><span class="stage-label">РЕЗУЛЬТАТ</span><h4>Экономика продажи</h4></div><span class="results-unit">в белорусских рублях · BYN</span></div>');
+
+  const calc = $('.calc-wrap');
+  const offersHead = $('#offers');
+  const offerGrid = $('.quotes-grid');
+  const sourceCard = $('.source-card');
+  if (calc && offersHead && offerGrid && sourceCard) {
+    const prices = create('section','price-section');
+    prices.id = 'price-workflow';
+    prices.insertAdjacentHTML('afterbegin','<div class="stage-title"><span class="stage-number">02</span><div><h4>Исходные цены</h4><p>Закупка у поставщика и цена конкурентов — от них зависит результат.</p></div></div>');
+    const offerTitle = offersHead.querySelector('h4'); if(offerTitle) offerTitle.textContent='Предложения';
+    const offerKicker=offersHead.querySelector('.section-kicker');if(offerKicker)offerKicker.remove();
+    prices.append(offersHead);
+    const details = create('details','offer-details');
+    details.id='offers-detail';
+    details.open = window.matchMedia('(min-width: 850px)').matches;
+    const summary=create('summary','offer-summary','<span>Список предложений <small>Поставщики и розница</small></span><span class="summary-action">Показать / скрыть <b aria-hidden="true">⌄</b></span>');
+    details.append(summary,offerGrid,sourceCard);
+    prices.append(details);
+    calc.before(prices);
+  }
+  const calcHead = calc?.querySelector('.calc-head');
+  if (calcHead) {
+    calcHead.querySelector('.section-kicker')?.remove();
+    const title=calcHead.querySelector('h4');if(title)title.textContent='Сценарий продажи';
+    calc.insertAdjacentHTML('afterbegin','<div class="stage-title"><span class="stage-number">03</span><div><h4>Настройте партию</h4><p>Введите, сколько продадите, и учтите расходы.</p></div></div>');
+  }
+  const note=calc?.querySelector('.note');
+  if(note){
+    const details=create('details','tax-info');
+    details.append(create('summary','', 'Что важно знать о налогах и расчёте'));
+    note.before(details);details.append(note);
+  }
+  const qty=$('#qty');if(qty)qty.setAttribute('inputmode','numeric');
+  document.querySelectorAll('.calc-grid input[type="number"]').forEach(inp => {if(inp!==qty) inp.setAttribute('inputmode','decimal')});
+
+  const breakdown=$('.bottom-grid');
+  if(breakdown) {
+    breakdown.insertAdjacentHTML('beforebegin','<div class="stage-title expenses-title"><span class="stage-number plain">04</span><div><h4>Что останется после продажи</h4><p>Прибыль, остатки на складе и деньги, которые вернутся в оборот.</p></div></div>');
+  }
+  const method=$('.methodology');
+  if(method){
+    method.classList.add('secondary-section');
+    const title=method.querySelector('h2');if(title)title.textContent='Как считается прибыль';
+    const kicker=method.querySelector('.section-kicker');if(kicker)kicker.remove();
+  }
+  const tools=$('#tools');
+  if(tools){
+    tools.classList.add('secondary-section');
+    tools.querySelector('.section-kicker')?.remove();
+    const title=tools.querySelector('h2');if(title)title.textContent='Ваши данные';
+  }
+  const footer=$('.footer');
+  if(footer){
+    const p=footer.querySelector('p');if(p)p.textContent='Оценка экономики сделки · не гарантия продаж. Данные хранятся в вашем браузере.';
+  }
+  const dock=$('.mobile-dock');
+  if(dock){
+    dock.innerHTML = `<a href="#categories-section"><span aria-hidden="true">⌕</span>Товары</a>
+      <a href="#price-workflow"><span aria-hidden="true">≡</span>Цены</a>
+      <a href="#workspace" class="dock-primary"><span aria-hidden="true">▤</span>Расчёт</a>
+      <button type="button" id="mobileAdd"><span aria-hidden="true">＋</span>Добавить</button>`;
+  }
+  const offerForm = $('#offerForm');
+  if(offerForm) offerForm.addEventListener('submit', () => { const list=$('#offers-detail'); if(list) list.open=true; }, true);
+  // Keep all original element IDs and data attributes, so saved data, imports and existing callbacks continue working.
+})();
+
+</script>
+<script>
 /* Маржа BY — calculation engine. Pure functions; works in browser and Node. */
 (function (root) {
   'use strict';
@@ -584,7 +1048,7 @@ button,a{ -webkit-tap-highlight-color:transparent }
     $('offerForm').addEventListener('submit',onOfferSubmit);
     for(const btn of document.querySelectorAll('[data-close]'))btn.addEventListener('click',()=>$(btn.dataset.close).close());
     for(const dialog of document.querySelectorAll('dialog'))dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
-    $('categoryGrid').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(!b)return;filter=filter===b.dataset.category?'all':b.dataset.category;updateCategories();renderProductList();$('workspace').scrollIntoView({behavior:'smooth',block:'start'})});
+    $('categoryGrid').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(!b)return;filter=filter===b.dataset.category?'all':b.dataset.category;if(filter!=='all'){const first=db.products.find(p=>p.category===filter);if(first)db.selected=first.id;}render();$('workspace').scrollIntoView({behavior:'smooth',block:'start'})});
     $('productList').addEventListener('click',e=>{const b=e.target.closest('[data-product]');if(!b)return;db.selected=b.dataset.product;render();if(window.matchMedia('(max-width: 900px)').matches){document.querySelector('.analysis-panel').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}});
     document.querySelectorAll('[data-quick-qty]').forEach(btn=>btn.addEventListener('click',()=>{
       const input=$('qty');input.value=btn.dataset.quickQty;
